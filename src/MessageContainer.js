@@ -157,7 +157,7 @@ export default class MessageContainer extends React.Component {
       return <View style={styles.container} />;
     }
     return (
-      <View style={styles.container}>
+      <View style={styles.container} onStartShouldSetResponderCapture={() => this.props.toggleParallaxScroll(true)}>
         {this.state.showScrollBottom && this.props.scrollToBottom ? this.renderScrollToBottomWrapper() : null}
         <FlatList
           ref={(ref) => (this.flatListRef = ref)}
